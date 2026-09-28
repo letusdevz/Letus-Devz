@@ -22,8 +22,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
 
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+          {/* Left Column - FULL WIDTH em mobile, 7 colunas em desktop */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 w-full">
 
             {/* Tag — mt-2 para descer ~1mm */}
             <div className="mt-2 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0D1B3E]/60 border border-[#00C896]/40 text-[#00C896] text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg backdrop-blur-md">
@@ -77,8 +77,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             </div>
           </div>
 
-          {/* Right Column: Phone mockup */}
-          <div className="lg:col-span-5 flex justify-center">
+          {/* Right Column: Phone mockup - ESCONDIDO EM MOBILE */}
+          <div className="hidden lg:flex lg:col-span-5 justify-center">
             <div className="relative w-full max-w-[360px] sm:max-w-[400px]">
               {/* Glow ambiente */}
               <div className="absolute -inset-4 bg-gradient-to-r from-[#00C896]/25 via-[#2563EB]/20 to-[#00C896]/30 rounded-[3rem] blur-2xl opacity-80 pointer-events-none" />
