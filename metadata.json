@@ -1,0 +1,6 @@
+{
+  "name": "LETUS DEV - Soluções Digitais",
+  "description": "Website institucional da LETUS DEV: equipa jovem de engenharia focada em soluções de software, dados, design e suporte em Moçambique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
