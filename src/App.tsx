@@ -10,6 +10,7 @@ import { Footer } from './components/Footer';
 import { PricingPackage, TeamMember } from './types';
 import { MessageSquare, PhoneCall } from 'lucide-react';
 import { COMPANY_INFO } from './data/companyData';
+import { LanguageProvider } from './i18n/LanguageContext';
 import fundoImageDesktop from './assets/images/Fundoo.png';
 import fundoImageMobile from './assets/images/fundo2.png';
 
@@ -73,13 +74,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-white flex flex-col selection:bg-[#00C896] selection:text-[#0D1B3E]" style={{background: 'linear-gradient(135deg, #0a2a4a 0%, #0d3b2e 50%, #0a2a4a 100%)', backgroundAttachment: 'fixed'}}>
-      
-      {/* Top Navbar */}
-      <Navbar
-        activeSection={activeSection}
-        onOpenContact={() => handleOpenContactModal()}
-      />
+    <LanguageProvider>
+      <div className="min-h-screen text-white flex flex-col selection:bg-[#00C896] selection:text-[#0D1B3E]" style={{background: 'linear-gradient(135deg, #0a2a4a 0%, #0d3b2e 50%, #0a2a4a 100%)', backgroundAttachment: 'fixed'}}>
+        
+        {/* Top Navbar */}
+        <Navbar
+          activeSection={activeSection}
+          onOpenContact={() => handleOpenContactModal()}
+        />
 
       {/* Main Content Sections */}
       <main className="flex-1">
@@ -143,5 +145,6 @@ export default function App() {
       />
 
     </div>
+    </LanguageProvider>
   );
 }

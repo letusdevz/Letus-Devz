@@ -113,11 +113,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'hermenio-vilanculos',
     name: 'Herménio Rodrigues Vilanculos',
-    role: '',
+    role: 'Diretor das Finanças',
     category: 'Engenharia',
     bio: 'Engenheiro apaixonado por arquiteturas escaláveis e desenvolvimento web.',
     skills: ['TypeScript', 'React / Next.js', 'Node.js', 'PostgreSQL'],
-    photoUrl: '/Logo/Perfil/P1.jpg',
+    photoUrl: '/Logo/Perfil/perfil.jpg',
     whatsapp: '258843900001',
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com'
@@ -137,11 +137,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'director-marketing',
     name: 'Alladim Dinis de Jesus António Paiva',
-    role: 'Directora de Marketing',
+    role: 'Diretor de Marketing',
     category: 'Marketing',
     bio: 'Responsável pela estratégia de marketing e comunicação.',
     skills: ['Marketing Digital', 'Branding', 'Comunicação'],
-    photoUrl: '/Logo/Perfil/P3.jpeg',
+    photoUrl: '/Logo/Perfil/perfil.jpg',
     whatsapp: '258843900003',
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com'
@@ -165,7 +165,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     category: 'Design',
     bio: 'Cria conteúdo visual e gere a presença digital.',
     skills: ['Design Gráfico', 'Social Media', 'Conteúdo Visual'],
-    photoUrl: '/Logo/Perfil/P2.jpeg',
+    photoUrl: '/Logo/Perfil/perfil.jpg',
     whatsapp: '258843900005',
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com'

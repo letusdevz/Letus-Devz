@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageSquare, ArrowUpRight, Phone, Mail } from 'lucide-react';
 import { COMPANY_INFO, getWhatsAppUrl } from '../data/companyData';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../i18n/LanguageContext';
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -10,6 +12,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +23,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
   }, []);
 
   const navLinks = [
-    { id: 'inicio', label: 'Início', href: '#inicio' },
-    { id: 'sobre', label: 'Sobre', href: '#sobre' },
-    { id: 'servicos', label: 'Serviços', href: '#servicos' },
-    { id: 'pacotes', label: 'Pacotes', href: '#pacotes' },
-    { id: 'contactos', label: 'Contactos', href: '#contactos' },
+    { id: 'inicio', label: t.navHome, href: '#inicio' },
+    { id: 'sobre', label: t.navAbout, href: '#sobre' },
+    { id: 'servicos', label: t.navServices, href: '#servicos' },
+    { id: 'pacotes', label: t.navPackages, href: '#pacotes' },
+    { id: 'contactos', label: t.navContact, href: '#contactos' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -82,7 +85,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
           </nav>
 
           {/* CTA Desktop */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSelector />
             <a
               id="header-cta-fale-connosco"
               href={getWhatsAppUrl('Olá LETUS DEV! Gostaria de falar sobre soluções de software e tecnologia para a minha empresa.')}
@@ -91,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
               className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00C896] hover:bg-[#00b386] text-[#0D1B3E] font-black text-xs uppercase tracking-wider shadow-lg shadow-[#00C896]/30 hover:shadow-[#00C896]/50 transition-all duration-200 active:scale-95"
             >
               <MessageSquare className="w-3.5 h-3.5 stroke-[2.5]" />
-              <span>Fale Connosco</span>
+              <span>{t.navTalkToUs}</span>
               <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
@@ -105,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
               rel="noreferrer"
               className="px-3 py-1.5 rounded-full bg-[#00C896]/20 border border-[#00C896]/40 text-[#00C896] text-xs font-bold uppercase tracking-wider sm:hidden"
             >
-              Fale Connosco
+              {t.navTalkToUs}
             </a>
             <button
               id="mobile-menu-toggle"
@@ -143,6 +147,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
           </div>
 
           <div className="pt-3 border-t border-[#00C896]/20 space-y-2">
+            <div className="flex justify-center mb-2">
+              <LanguageSelector />
+            </div>
             <a
               id="mobile-drawer-fale-connosco"
               href={getWhatsAppUrl('Olá LETUS DEV! Gostaria de falar sobre soluções de software e tecnologia para a minha empresa.')}
@@ -152,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, activeSection }) 
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#00C896] text-[#0D1B3E] font-black text-xs uppercase tracking-wider shadow-lg shadow-[#00C896]/20"
             >
               <MessageSquare className="w-4 h-4 stroke-[2.5]" />
-              <span>Fale Connosco</span>
+              <span>{t.navTalkToUs}</span>
             </a>
 
             <div className="flex items-center justify-between px-2 pt-2 text-xs text-white/60">

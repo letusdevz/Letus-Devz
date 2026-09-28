@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageSquare, CheckCircle2, ShieldCheck, Zap, MapPin } from 'lucide-react';
 import { getWhatsAppUrl } from '../data/companyData';
+import { useLanguage } from '../i18n/LanguageContext';
 import phoneScreenImg from '../assets/images/celular.png';
 
 interface HeroSectionProps {
@@ -8,6 +9,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
+  const { t } = useLanguage();
   return (
     <section id="inicio" className="relative min-h-screen pt-24 sm:pt-36 pb-12 sm:pb-20 flex items-center overflow-hidden">
       {/* Radial glow */}
@@ -29,7 +31,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00C896] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00C896]"></span>
               </span>
-              <span>Engenharia de Software em Moçambique</span>
+              <span>{t.heroSlogan}</span>
               <span className="text-white/30">•</span>
               <span className="flex items-center gap-1 text-white/70 normal-case font-medium">
                 <img src="/Logo/icones/localiza,icon.png" alt="Localização" className="w-3.5 h-3.5 object-contain" /> Inhambane
@@ -39,10 +41,10 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             {/* Headline */}
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.05] font-['Outfit']">
-                Desenvolvemos Software para o Seu Negócio
+                {t.heroSlogan}
               </h1>
               <p className="text-sm sm:text-base lg:text-xl text-white/80 max-w-2xl font-normal leading-relaxed">
-                Somos uma equipa de programadores em Inhambane. Criamos sistemas, sites e aplicações para empresas em Moçambique.
+                {t.heroTagline}
               </p>
             </div>
 
@@ -53,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 id="hero-cta-explorar-servicos"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0D1B3E]/60 hover:bg-[#0D1B3E]/90 text-white font-black text-sm uppercase tracking-wider border border-[#2563EB]/50 hover:border-[#2563EB] transition-all duration-200 backdrop-blur-sm"
               >
-                <span>Explorar Serviços</span>
+                <span>{t.heroCtaLearn}</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.5]" />
               </a>
             </div>
@@ -62,15 +64,15 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-white/10">
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-[#00C896] shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-semibold">Sites e Sistemas</span>
+                <span className="text-xs sm:text-sm text-white font-semibold">{t.heroWebsitesAndSystems}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <ShieldCheck className="w-5 h-5 text-[#2563EB] shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-semibold">Dados Seguros</span>
+                <span className="text-xs sm:text-sm text-white font-semibold">{t.heroSecureData}</span>
               </div>
               <div className="flex items-center gap-2.5 col-span-2 sm:col-span-1">
                 <Zap className="w-5 h-5 text-[#00C896] shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-semibold">Suporte Local</span>
+                <span className="text-xs sm:text-sm text-white font-semibold">{t.heroLocalSupport}</span>
               </div>
             </div>
           </div>
