@@ -1,13 +1,30 @@
 @import "tailwindcss";
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #0a2a4a 0%, #0d3b2e 50%, #0a2a4a 100%);
     background-attachment: fixed;
     color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
   
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
     letter-spacing: -0.025em;
@@ -23,6 +40,14 @@
 
   code, pre {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Prevenir zoom em inputs no iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 16px;
   }
 }
 

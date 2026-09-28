@@ -75,7 +75,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen text-white flex flex-col selection:bg-[#00C896] selection:text-[#0D1B3E]" style={{background: 'linear-gradient(135deg, #0a2a4a 0%, #0d3b2e 50%, #0a2a4a 100%)', backgroundAttachment: 'fixed'}}>
+      <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden text-white flex flex-col selection:bg-[#00C896] selection:text-[#0D1B3E]" style={{background: 'linear-gradient(135deg, #0a2a4a 0%, #0d3b2e 50%, #0a2a4a 100%)', backgroundAttachment: 'fixed'}}>
         
         {/* Top Navbar */}
         <Navbar
